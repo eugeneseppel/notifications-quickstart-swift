@@ -10,8 +10,8 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  var serverURL = "http://rakvere.ngrok.io"
-  var path : String = "/register"
+  var serverURL = "http://tartu.ngrok.io"
+  var path : String = "/api/register"
 
   @IBOutlet var registerButton: UIButton!
   @IBOutlet var identityField: UITextField!

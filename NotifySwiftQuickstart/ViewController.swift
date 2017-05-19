@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
-  var serverURL = "http://YOUR_SERVER_HERE"
+  var serverURL = "http://rakvere.ngrok.io"
   var path : String = "/register"
 
   @IBOutlet var registerButton: UIButton!
@@ -106,7 +106,10 @@ class ViewController: UIViewController {
                         self.messageLabel.isHidden = false
                     }
                 }
-                try KeychainAccess.saveEndpoint(identity: identity, endpoint: responseDictionary["endpoint"] as! String)
+                
+                if (responseDictionary["endpoint"] != nil){
+                    try KeychainAccess.saveEndpoint(identity: identity, endpoint: responseDictionary["endpoint"] as! String)
+                }
 
             }
             print("JSON: \(responseObject)")
